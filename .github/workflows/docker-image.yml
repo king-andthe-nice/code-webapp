@@ -27,12 +27,9 @@ jobs:
           docker pull king210319/code-webapp:latest
           docker pull king210319/code-webapp-mysql:5.7-custom
 
-          
-      # 使用官方 action 安装 docker-compose
+      # 使用正确的 Docker Compose 动作版本（推荐 v2 或具体版本）
       - name: Set up Docker Compose
-        uses: docker/compose-action@v5
-        with:
-          version: v2.20.3  # 指定版本
+        uses: docker/compose-action@v2  # 使用 major 版本，自动更新
 
       # 第四步：使用 docker-compose 启动服务并在后台保持运行
       - name: Start services with Docker Compose
